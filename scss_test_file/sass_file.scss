@@ -1,8 +1,11 @@
-.class_name {
-
-  color: red;
+@mixin title-small {
+  font-size: 15px;
+  font-family: Roboto;
+  color: #F2F2F2;
 }
-
-.class_two {
-  color: red;
+.blog-title {
+  @include title-small;
+}
+.page-title {
+  @include title-small;
 }
