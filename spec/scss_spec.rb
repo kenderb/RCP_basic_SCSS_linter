@@ -30,16 +30,9 @@ RSpec.describe 'An idial scss linter' do
     end
   end
   describe 'The ErrorChecker class' do
-    describe ' The method mixin_checker' do
-      context 'when it has mixin' do
-        it 'return true' do
-          expect(mixin_test.mixin_checker).to eq(true)
-        end
-      end
-      context 'when it does not has a content' do
-        it 'Returns a warning' do
-          expect(read_file_empty.read_scss_lines).to eq('the file is empty')
-        end
+    describe 'when it has mixin' do
+      it 'return true' do
+        expect(mixin_test.check_duplicate_includes).to eq(true)
       end
     end
   end
