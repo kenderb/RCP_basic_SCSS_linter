@@ -36,7 +36,7 @@ class ErrorChecker
   def check_brackets_lines
     bracket_lines = {}
     @string_list.each_with_index do |str, i|
-      bracket_lines[i + 1] = str if str.include?('}') || str.include?('{')
+      bracket_lines[i + 1] = str[-1] if str.include?('}') || str.include?('{')
     end
     bracket_lines
   end
@@ -45,17 +45,11 @@ class ErrorChecker
 
   def check_closing_brackets
     brackets_lines = check_brackets_lines
-    closing_brackets_line = []
-    brackets_lines.each_with_index do |(key, value), index|
-      puts value.red
-      puts brackets_lines.values[index + 1]
-      unless brackets_lines.values[index + 1].nil?
-        unless value.include?('{') && brackets_lines.values[index + 1].include?('}')
-          closing_brackets_line.push(key)
-        end
-      end
+    bracket_error_line = []
+    brackets_lines.each_with_index do |(key, value), i|
+      bracket_error_line.push(key) if value == brackets_lines.values[i + 1] ||
+                                      brackets_lines.values[i + 1].nil?
     end
-    closing_brackets_line
+    bracket_error_line
   end
-
 end
