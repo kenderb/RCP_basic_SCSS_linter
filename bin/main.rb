@@ -6,10 +6,11 @@ require_relative '../lib/file_reader'
 require_relative '../lib/error_checker'
 
 module HelperMethods
-  ERROR_LIST = { one: "#{'Mixin'.red} generate duplicated code " \
+  ERROR_LIST = { _101: "#{'Mixin'.red} generate duplicated code " \
                     "#{'use placeholders'.green} instead:",
-                 two: 'Missed semicolon:'.red,
-                 three: 'Unclosed block:'.red }.freeze
+                 _201: 'Missed semicolon:'.red,
+                 _301: 'Unclosed block:'.red,
+                 _401: "#{'Found CamelCase, snake, lowerCamelCase.'.red} Use #{'Hyphen'.green} instead:" }.freeze
   def self.display_error(error_lines, error)
     if error_lines.empty? || error_lines.instance_of?(String)
       print '.'.green
@@ -26,13 +27,16 @@ if __FILE__ == $PROGRAM_NAME
   list_of_includes = error_checker.check_duplicate_includes
   list_of_bad_ends = error_checker.check_bad_ending_atribute
   list_of_unclosed_block = error_checker.check_closing_brackets
+  camel_case = error_checker.check_snake_on_selector_name
   unless list_of_includes.instance_of?(String)
     puts "Founds #{list_of_includes.length +
                     list_of_bad_ends.length +
-                    list_of_unclosed_block.length} errors".red
+                    list_of_unclosed_block.length +
+                    camel_case.length} errors".red
   end
-  HelperMethods.display_error(list_of_includes, :one)
-  HelperMethods.display_error(list_of_bad_ends, :two)
-  HelperMethods.display_error(list_of_unclosed_block, :three)
+  HelperMethods.display_error(list_of_includes, :_101)
+  HelperMethods.display_error(list_of_bad_ends, :_201)
+  HelperMethods.display_error(list_of_unclosed_block, :_301)
+  HelperMethods.display_error(camel_case, :_401)
   puts ''
 end

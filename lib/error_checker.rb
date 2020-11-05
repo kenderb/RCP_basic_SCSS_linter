@@ -55,13 +55,13 @@ class ErrorChecker
         bracket_error_line.push(key) if value == lines.values[i + 1]
       end
     end
-    if lines.values[-1] == lines.values[0]
-      bracket_error_line.push(lines.keys[-1])
-    end
+    bracket_error_line.push(lines.keys[-1]) if lines.values[-1] == lines.values[0]
     bracket_error_line
   end
 
   def check_snake_on_selector_name
+    return 'the file is empty' if @string_list == 'the file is empty'
+
     lines = []
     camel_case_m = /(^[a-z]|[A-Z0-9])[a-z]*/
     @string_list.each_with_index do |str, i|
