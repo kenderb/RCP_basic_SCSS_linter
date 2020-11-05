@@ -11,7 +11,7 @@ class ErrorChecker
     mixers_list = []
     @string_list.each do |line|
       string = StringScanner.new(line)
-      mixers_list.push(line.split(' ')[1]) if string.scan('@mixin')
+      mixers_list.push(line.split(' ')[1].delete('{')) if string.scan('@mixin')
     end
     mixers_list
   end
