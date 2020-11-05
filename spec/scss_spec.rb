@@ -39,7 +39,7 @@ RSpec.describe 'An idial scss linter' do
     end
     describe "when does not has ';'" do
       it 'return the numbers of lines that does not has ";" as an array' do
-        expect(error_test.check_bad_ending_atribute).to eq([9, 18])
+        expect(error_test.check_bad_ending_atribute).to eq([3, 9, 18])
       end
     end
     describe '' do
