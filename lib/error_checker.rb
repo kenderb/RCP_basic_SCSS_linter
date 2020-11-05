@@ -17,7 +17,7 @@ class ErrorChecker
   end
 
   def check_parameter_mixin(item)
-    item
+    puts item
   end
 
   public
@@ -26,8 +26,8 @@ class ErrorChecker
     duplicated = []
     unless mixin_checker.empty?
       @string_list.each_with_index do |str, i|
+        check_parameter_mixin(str) if str.match(/\((\w|.){1,}\)/)
         mixin_checker.each do |item|
-          check_parameter_mixin(item) if item.match(/\((\w|.){1,}\)/)
           duplicated.push(i + 1) if str.delete(' ').include?("@include#{item};")
         end
       end

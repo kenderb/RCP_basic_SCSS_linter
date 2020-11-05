@@ -1,5 +1,5 @@
-@mixin title-parameter(hi){
-  font-size: 15px;
+@mixin title-parameter($hi){
+  font-size: $hi;
   font-family: Roboto;
   color: #F2F2F2;
 }
@@ -14,7 +14,7 @@
 }
 .page-title {
   @include title-small;
-  @include title-parameter(10);
+  @include title-parameter(10px);
 }
 
 @mixin title-big      {
@@ -26,6 +26,6 @@
   @include title-big;
 }
 .page-title {
-  @include title-parameter(10);
+  @include title-parameter(10px);
   @include title-big;
 }
