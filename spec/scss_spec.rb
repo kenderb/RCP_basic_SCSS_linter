@@ -42,5 +42,10 @@ RSpec.describe 'An idial scss linter' do
         expect(error_test.check_bad_ending_atribute).to eq([9, 18])
       end
     end
+    describe '' do
+      it 'return the numbers of lines that does not has closing curly bracket' do
+        expect(error_test.check_closing_brackets).to eq([9, 18])
+      end
+    end
   end
 end
