@@ -47,14 +47,28 @@ class ErrorChecker
 
   def check_closing_brackets
     return 'the file is empty' if @string_list == 'the file is empty'
-    brackets_lines = check_brackets_lines
+
+    lines = check_brackets_lines
     bracket_error_line = []
-    brackets_lines.each_with_index do |(key, value), i|
-      unless brackets_lines.values.count('{') == brackets_lines.values.count('}')
-        bracket_error_line.push(key) if value == brackets_lines.values[i + 1]
+    lines.each_with_index do |(key, value), i|
+      unless lines.values.count('{') == lines.values.count('}')
+        bracket_error_line.push(key) if value == lines.values[i + 1]
       end
     end
-    bracket_error_line.push(brackets_lines.keys[-1]) if brackets_lines.values[-1] == brackets_lines.values[0]
+    if lines.values[-1] == lines.values[0]
+      bracket_error_line.push(lines.keys[-1])
+    end
     bracket_error_line
+  end
+
+  def check_snake_on_selector_name
+    lines = []
+    camel_case_m = /(^[a-z]|[A-Z0-9])[a-z]*/
+    @string_list.each_with_index do |str, i|
+      if str.include?('{') || str.include?('}')
+        lines.push(i + 1) if str.include?('_') || str.scan(camel_case_m).any?
+      end
+    end
+    lines
   end
 end

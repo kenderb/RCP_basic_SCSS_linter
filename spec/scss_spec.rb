@@ -37,14 +37,19 @@ RSpec.describe 'An idial scss linter' do
         expect(error_test.check_duplicate_includes).to eq([13, 14, 17, 18])
       end
     end
-    describe "when does not has ';'" do
+    describe "when does not has ';' at the end of the line" do
       it 'return the numbers of lines that does not has ";" as an array' do
         expect(error_test.check_bad_ending_atribute).to eq([3, 9, 18])
       end
     end
-    describe '' do
+    describe 'when does not has curly bracket at the end of the block' do
       it 'return lines that does not has closing curly bracket' do
         expect(error_test.check_closing_brackets).to eq([7, 16])
+      end
+    end
+    describe 'when it has CameCase or snake' do
+      it 'return lines that does has CameCase' do
+        expect(error_test.check_snake_on_selector_name).to eq([20, 24, 28])
       end
     end
   end
