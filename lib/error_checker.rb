@@ -47,8 +47,12 @@ class ErrorChecker
     brackets_lines = check_brackets_lines
     bracket_error_line = []
     brackets_lines.each_with_index do |(key, value), i|
-      bracket_error_line.push(key) if value == brackets_lines.values[i + 1] ||
-                                      brackets_lines.values[i + 1].nil?
+      unless brackets_lines.values.count('{') == brackets_lines.values.count('}')
+        bracket_error_line.push(key) if value == brackets_lines.values[i + 1]
+      end
+    end
+    if brackets_lines.values[-1] == brackets_lines.values[0]
+      bracket_error_line.push(brackets_lines.keys[-1])
     end
     bracket_error_line
   end
