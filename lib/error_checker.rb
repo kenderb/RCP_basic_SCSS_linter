@@ -16,15 +16,19 @@ class ErrorChecker
     mixers_list
   end
 
+  def check_parameter_mixin(item)
+    item
+  end
+
   public
 
   def check_duplicate_includes
     duplicated = []
     unless mixin_checker.empty?
-      @string_list.each_with_index do |line, index|
+      @string_list.each_with_index do |str, i|
         mixin_checker.each do |item|
-          duplicated.push(index + 1) if
-          line.delete(' ').include?("@include#{item};")
+          check_parameter_mixin(item) if item.match(/\((\w|.){1,}\)/)
+          duplicated.push(i + 1) if str.delete(' ').include?("@include#{item};")
         end
       end
     end
