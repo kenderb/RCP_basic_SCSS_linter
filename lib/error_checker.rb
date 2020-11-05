@@ -22,6 +22,8 @@ class ErrorChecker
 
   def check_bad_ending_atribute
     error_lines = []
+    return 'the file is empty' if @string_list == 'the file is empty'
+
     @string_list.each_with_index do |str, i|
       unless str.delete(' ').include?('{') || str.delete(' ').include?('}') ||
              str =~ /\A\s*\Z/
@@ -51,9 +53,7 @@ class ErrorChecker
         bracket_error_line.push(key) if value == brackets_lines.values[i + 1]
       end
     end
-    if brackets_lines.values[-1] == brackets_lines.values[0]
-      bracket_error_line.push(brackets_lines.keys[-1])
-    end
+    bracket_error_line.push(brackets_lines.keys[-1]) if brackets_lines.values[-1] == brackets_lines.values[0]
     bracket_error_line
   end
 end
