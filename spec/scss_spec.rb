@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../bin/main'
 RSpec.describe 'An idial scss linter' do
   let(:read_file) { ReadFile.new('./scss_test_file/sass_file.scss') }
@@ -32,7 +34,7 @@ RSpec.describe 'An idial scss linter' do
   describe 'The ErrorChecker class' do
     describe 'when it has mixin' do
       it 'return the numbers of duplicated includes as an array' do
-        expect(mixin_test.check_duplicate_includes).to eq([7, 10, 19, 22])
+        expect(mixin_test.check_duplicate_includes).to eq([13, 14, 17, 18])
       end
     end
   end

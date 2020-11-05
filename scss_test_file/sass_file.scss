@@ -1,31 +1,20 @@
-@mixin title-parameter($hi){
-  font-size: $hi;
+@mixin title-small {
+  font-size: 15px;
   font-family: Roboto;
   color: #F2F2F2;
 }
 
-@mixin title-small{
-  font-size: 15px;
+@mixin title-big($var) {
+  font-size: $var;
   font-family: Roboto;
-  color: #F2F2F2;
+  color: #fc0000;
 }
 .blog-title {
   @include title-small;
+  @include title-big(25px);
 }
 .page-title {
   @include title-small;
-  @include title-parameter(10px);
-}
+  @include title-big(15px);
 
-@mixin title-big      {
-  font-size: 15px;
-  font-family: Roboto;
-  color: #F2F2F2;
-}
-.blog-title        {
-  @include title-big;
-}
-.page-title {
-  @include title-parameter(10px);
-  @include title-big;
 }
