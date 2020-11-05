@@ -31,8 +31,8 @@ RSpec.describe 'An idial scss linter' do
   end
   describe 'The ErrorChecker class' do
     describe 'when it has mixin' do
-      it 'return true' do
-        expect(mixin_test.check_duplicate_includes).to eq(true)
+      it 'return the numbers of duplicated includes as an array' do
+        expect(mixin_test.check_duplicate_includes).to eq([7, 10, 19, 22])
       end
     end
   end
