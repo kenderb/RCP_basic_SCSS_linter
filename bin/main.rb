@@ -12,7 +12,8 @@ if __FILE__ == $PROGRAM_NAME
     puts '.'.green
   else
     list_of_includes.each do |item|
-      puts "Using #{'mixin '.red} generate duplicated code use #{'placeholders'.green}instead:#{" Line #{item}".red}"
+      puts "Using #{'mixin'.red} generate duplicated code use" \
+      "#{' placeholders'.green} instead:#{" Line #{item}".red}"
     end
   end
 end
