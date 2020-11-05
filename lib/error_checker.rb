@@ -19,4 +19,15 @@ class ErrorChecker
     end
     duplicated
   end
+
+  def check_bad_ending_atribute
+    error_lines = []
+    @string_list.each_with_index do |str, i|
+      unless str.delete(' ').include?('{') || str.delete(' ').include?('}') ||
+             str =~ /\A\s*\Z/
+        error_lines.push(i + 1) unless str.include?(';')
+      end
+    end
+    error_lines
+  end
 end

@@ -6,7 +6,7 @@
 
 @mixin title-big($var) {
   font-size: $var;
-  font-family: Roboto;
+  font-family: Robot
   color: #fc0000;
 }
 .blog-title {
@@ -15,6 +15,5 @@
 }
 .page-title {
   @include title-small;
-  @include title-big(15px);
-
+  @include title-big(15px)
 }
