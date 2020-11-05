@@ -1,4 +1,4 @@
-@mixin title-small {
+@mixin title-small  {
   font-size: 15px;
   font-family: Roboto;
   color: #F2F2F2;
@@ -15,7 +15,7 @@
   font-family: Roboto;
   color: #F2F2F2;
 }
-.blog-title {
+.blog-title        {
   @include title-big;
 }
 .page-title {

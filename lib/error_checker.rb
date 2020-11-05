@@ -5,8 +5,10 @@ class ErrorChecker
     @string_list = string_list
   end
 
+  private
+
   def mixin_checker
-    mixers_list =[]
+    mixers_list = []
     @string_list.each do |line|
       string = StringScanner.new(line)
       mixers_list.push(line.split(' ')[1]) if string.scan('@mixin')
@@ -14,12 +16,15 @@ class ErrorChecker
     mixers_list
   end
 
+  public
+
   def check_duplicate_includes
     duplicated = []
     unless mixin_checker.empty?
       @string_list.each_with_index do |line, index|
         mixin_checker.each do |item|
-          duplicated.push(index + 1) if line.include?(" @include #{item};")
+          duplicated.push(index + 1) if
+          line.delete(' ').include?("@include#{item};")
         end
       end
     end
