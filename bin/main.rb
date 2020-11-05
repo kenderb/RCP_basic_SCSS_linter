@@ -26,9 +26,11 @@ if __FILE__ == $PROGRAM_NAME
   list_of_includes = error_checker.check_duplicate_includes
   list_of_bad_ends = error_checker.check_bad_ending_atribute
   list_of_unclosed_block = error_checker.check_closing_brackets
-  puts "Founds #{list_of_includes.length +
-                  list_of_bad_ends.length +
-                  list_of_unclosed_block.length} errors".red
+  unless list_of_includes.instance_of?(String)
+    puts "Founds #{list_of_includes.length +
+                    list_of_bad_ends.length +
+                    list_of_unclosed_block.length} errors".red
+  end
   HelperMethods.display_error(list_of_includes, :one)
   HelperMethods.display_error(list_of_bad_ends, :two)
   HelperMethods.display_error(list_of_unclosed_block, :three)

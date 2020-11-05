@@ -46,6 +46,7 @@ class ErrorChecker
   public
 
   def check_closing_brackets
+    return 'the file is empty' if @string_list == 'the file is empty'
     brackets_lines = check_brackets_lines
     bracket_error_line = []
     brackets_lines.each_with_index do |(key, value), i|
