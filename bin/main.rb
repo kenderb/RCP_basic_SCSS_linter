@@ -6,16 +6,16 @@ require_relative '../lib/file_reader'
 require_relative '../lib/error_checker'
 
 module HelperMethods
-  ERROR_LIST = { one: "#{'-'.blue} #{'Mixin'.red} generate duplicated code " \
+  ERROR_LIST = { one: "#{'Mixin'.red} generate duplicated code " \
                     "#{'use placeholders'.green} instead:",
-                 two: "#{'-'.blue} #{'Missed semicolon:'.red}",
-                 three: "#{'-'.blue} #{'Unclosed block:'.red}" }.freeze
+                 two: 'Missed semicolon:'.red,
+                 three: 'Unclosed block:'.red }.freeze
   def self.display_error(error_lines, error)
     if error_lines.empty? || error_lines.instance_of?(String)
       print '.'.green
     else
       error_lines.each do |item|
-        puts "#{ERROR_LIST[error]} line #{item}"
+        puts "#{'-'.blue} #{ERROR_LIST[error]} line #{item}"
       end
     end
   end
