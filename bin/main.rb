@@ -5,12 +5,14 @@ require 'colorize'
 require_relative '../lib/file_reader'
 require_relative '../lib/error_checker'
 
+# module HelperMethods contents global variables and display_error method
 module HelperMethods
   ERROR_LIST = { _101: "#{'Mixin'.red} generate duplicated code " \
                     "#{'use placeholders'.green} instead:",
                  _201: 'Missed semicolon:'.red,
                  _301: 'Unclosed block:'.red,
-                 _401: "#{'Found CamelCase, snake, lowerCamelCase.'.red} Use #{'Hyphen'.green} instead:" }.freeze
+                 _401: "#{'Found CamelCase, snake, lowerCamelCase.'.red}"\
+                  "Use #{'Hyphen'.green} instead:" }.freeze
   def self.display_error(error_lines, error)
     if error_lines.empty? || error_lines.instance_of?(String)
       print '.'.green

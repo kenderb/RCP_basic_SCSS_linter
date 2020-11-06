@@ -26,8 +26,8 @@ class ErrorChecker
 
     @string_list.each_with_index do |str, i|
       unless str.delete(' ').include?('{') || str.delete(' ').include?('}') ||
-             str =~ /\A\s*\Z/
-        error_lines.push(i + 1) unless str.include?(';')
+             str =~ /\A\s*\Z/ || str.include?(';')
+        error_lines.push(i + 1)
       end
     end
     error_lines
@@ -51,8 +51,9 @@ class ErrorChecker
     lines = check_brackets_lines
     bracket_error_line = []
     lines.each_with_index do |(key, value), i|
-      unless lines.values.count('{') == lines.values.count('}')
-        bracket_error_line.push(key) if value == lines.values[i + 1]
+      unless lines.values.count('{') == lines.values.count('}') ||
+             value != lines.values[i + 1]
+        bracket_error_line.push(key)
       end
     end
     bracket_error_line.push(lines.keys[-1]) if lines.values[-1] == lines.values[0]
@@ -65,8 +66,9 @@ class ErrorChecker
     lines = []
     camel_case_m = /(^[a-z]|[A-Z0-9])[a-z]*/
     @string_list.each_with_index do |str, i|
-      if str.include?('{') || str.include?('}')
-        lines.push(i + 1) if str.include?('_') || str.scan(camel_case_m).any?
+      if (str.include?('{') || str.include?('}')) &&
+         (str.include?('_') || str.scan(camel_case_m).any?)
+        lines.push(i + 1)
       end
     end
     lines
