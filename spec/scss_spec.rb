@@ -36,42 +36,42 @@ RSpec.describe 'An ideal scss linter' do
         end
       end
     end
-    context 'when it has not paramer' do
-      it 'return an error' do
+    context 'when it has not a parameter' do
+      it 'returns an error' do
         expect(read_file_no_paramer.file_path).to eq('no path')
       end
     end
   end
   describe 'The ErrorChecker class' do
-    describe 'when it has mixin' do
-      it 'return the numbers of duplicated includes as an array' do
+    describe 'when it has a mixin' do
+      it 'returns the numbers of duplicated includes as an array' do
         expect(error_test.check_duplicate_includes).to eq([13, 14, 17, 18])
       end
     end
     describe "when does not has ';' at the end of the line" do
-      it 'return the numbers of lines that does not has ";" as an array' do
+      it 'returns the numbers of lines that do not have ";" as an array' do
         expect(error_test.check_bad_ending_atribute).to eq([3, 9, 18])
       end
     end
-    describe 'when does not has curly bracket at the end of the block' do
-      it 'return lines that does not has closing curly bracket' do
+    describe 'when does not has a curly bracket at the end of the block' do
+      it 'returns lines that do not have a closing curly bracket' do
         expect(error_test.check_closing_brackets).to eq([7, 16])
       end
     end
     describe 'when it has CameCase or snake' do
-      it 'return lines that does has CameCase' do
+      it 'returns lines that do have CameCase' do
         expect(error_test.check_snake_on_selector_name).to eq([20, 24, 28])
       end
     end
     describe 'Method error_counter' do
-      it 'return number of errors' do
+      it 'returns number of errors' do
         expect(error_test.error_counter).to eq(12)
       end
     end
   end
   describe 'The HelperMethods method' do
     describe 'Method display_error' do
-      it 'display a message with the error' do
+      it 'displays a message with the error' do
         silence { expect(display_error).to eq([13, 14, 17, 18]) }
       end
     end
