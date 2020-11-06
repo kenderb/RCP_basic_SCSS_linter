@@ -140,6 +140,7 @@ Feel free to check the [issues page](https://github.com/kenderb/RCP_basic_SCSS_l
 ## Acknowledgments
 
 - SCSS file linter.
+- [Code.tutsplus.com](https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-6741)
 
 ## Show your support
 
