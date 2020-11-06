@@ -8,6 +8,10 @@ This project was made to push me in a real-life situation creating a program wit
 ## Built With
 
 - Ruby
+- RSpec gem
+- Colorize gem
+- Strscan gem
+- VS Code
 
 ## Requirements
 
