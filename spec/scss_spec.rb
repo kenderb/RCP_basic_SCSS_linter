@@ -16,7 +16,7 @@ def silence
   @original_stdout = nil
 end
 
-RSpec.describe 'An idial scss linter' do
+RSpec.describe 'An ideal scss linter' do
   let(:read_file) { ReadFile.new('./scss_test_file/sass_file.scss') }
   let(:read_file_no_paramer) { ReadFile.new(nil) }
   let(:read_file_empty) { ReadFile.new('./scss_test_file/sass_file_empty.scss') }
@@ -39,11 +39,6 @@ RSpec.describe 'An idial scss linter' do
     context 'when it has not paramer' do
       it 'return an error' do
         expect(read_file_no_paramer.file_path).to eq('no path')
-      end
-    end
-    context 'when it does not has a content' do
-      it 'Returns a warning' do
-        expect(read_file_empty.read_scss_lines).to eq('the file is empty')
       end
     end
   end
