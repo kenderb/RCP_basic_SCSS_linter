@@ -16,23 +16,23 @@ This project was made to push me in a real-life situation creating a program wit
 ## Requirements
 
 - Latest Ruby version.
-- run bundle install.
-
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 
 - Open a terminal or command prompt interface on your PC.
-- Clone the repo with: git clone  > https://github.com/kenderb/RCP_basic_SCSS_linter.git
+- Clone the repo with: git clone https://github.com/kenderb/RCP_basic_SCSS_linter.git
 - On the terminal navigate to the project directory using cd RCP_basic_SCSS_linter/
+- run bundle install
 
 
 ## Instructions
-> To check for errors in your scss file run the code ruby bin/main.rb + path to scss file you want to check.
-- If you have ERROS that will be display on the console like this. </br></br>
+> To check for errors in your scss file run the code ruby bin/main.rb + absolute path to scss file you want to check.
+- You can check the Code running `bin/main.rb ./scss_test_file/sass_file.scss` in the project folder  <br/>
+- If you have ERRORS that will be displayed on the console like this. </br></br>
 <img src='https://lh3.googleusercontent.com/pw/ACtC-3dIA1T3bwLIC6Dr8do9ckTbrwIdY-s0GohoVWM6r2KMsrumPWLbLMD3E-dz3_fLuKW-j_KI1n9GxV0A0KSj6cQW5yzS4YGC8CjY_q2WId4ixsX3yUNAOlNfwBNIvfboY9e91cGeT14d-3fYoe6qDcHU=w618-h218-no?authuser=0'> </br>
-- If you have not ERROS that will be display on the console like this. </br></br>
-<img src='https://lh3.googleusercontent.com/KNdNhWNi06eSVGPcgbGvY0-m4uzzdwm1OBc1mS3DpNQs3iiWZ0WZzTfkk0a5_k3DqxhGdqgeWbj1gPlpLZ_yXa1DPEopfIZnN6Z5naTI4RITocuJ9gfZ7r4isE3juoiOsIcEGdpwE7qeI2eOxOeb0KXYNHSpJEhtoM2v5CFGW53qaOM-PmuQBs99kuQ0xtFjc9SlFPP5D-85psAp0SQ_-2CH3TUTnV57C3bXW3oEwW7ZjWL-KYifLwVVvigiZArDVlP5qKlyd0pUYSgaabgSMKiGPfdTovxk1ef_hAYwIv4yJF9UoXGdUgrMHhSRvNJlzWoG1BNzF_0Zo4VOZmsE9Ja7klO_yUB_xaV9jBiMD2ZaYO89VpNvnpcdhvNZYFPb5MPbq8Y3hH4JmFGKPHDPtcFLGBzrjjgjVRIq23-HZY_NuWq9lr66opD0Iyb6BapqpxlQlSJ4mextS6p4IQcjqlPGADXa-I4yup3HuVdigNZYUTAssRL1LCCg_Re7hStBwH-Inb6t1ydvkKiR7-w1NszpA8CpHc6VepyMywJ5PSL4KgLOYa6kR4mZJpbd_PQwHtWSHExyQp8TrtPO0BdlosAH5Ipgk4LugNMeX95YZIjXF7S4R5agpVz3KxCkHeO0By0rILdlR-ACwLP2cpaJ6_ys-aHxml929x4UuKyDS9XcSv4JsKX15DzVmhoA=w186-h85-no?authuser=0'></br>
+- If you have not ERRORS that will be displayed on the console like this. </br></br>
+<img src='https://lh3.googleusercontent.com/pw/ACtC-3ez63rvVTV1Pvp06lejNU29wwfo67YdPkPnIATY1LYbqV0HKVY3h_Sa3c12xeC2W1Gj8OKynrgqj3Ps0hhH-uD-D3ZoAzFT831vqs-A_PPnO-z0mhWvk43CS09Xbpq5kQ_8nwiIMmxsgp4fyxhCXYNE=w186-h85-no?authuser=0'></br>
 
 ## How it works
 The linter scan the SCSS file and show you the errors:
@@ -114,23 +114,34 @@ The linter scan the SCSS file and show you the errors:
 	  font-size: 15rem;
 	}
 	```
-    
+ 
 ## Running Tests
 
 - Open the console
 - Navigate to the RCP_basic_scss_file_linter project
-- Run gem install rspec
 - Run rspec
-- The spec foder contains the test file with a Helper.
+- The spec folder contains the test file with a Helper.
+
 
 ## Author
 
-👤 **Kender Bolivar**
+👤 **Kender Bolívar**
 
 - GitHub: [@kenderb](https://github.com/ken)
-- Twitter: [@twitterhandle](https://twitter.com/KBTarts)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kender-bolivar-1736086b/)
+- Twitter: [@KBTarts](https://twitter.com/KBTarts)
+- LinkedIn: [KenderBolivar](https://www.linkedin.com/in/kender-bolivar-1736086b/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/kenderb/RCP_basic_SCSS_linter/issues).
+
+## Acknowledgments
+
+- SCSS file linter.
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
