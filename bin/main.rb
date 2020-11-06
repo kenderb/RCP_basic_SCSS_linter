@@ -13,7 +13,7 @@ module HelperMethods
                   "Use #{'Hyphen'.blue} instead:" }.freeze
   def self.display_error(error_lines, error)
     if error_lines.empty? || error_lines.instance_of?(String)
-      print '.'.green
+      puts '- Clean'.green
     else
       error_lines.each do |item|
         warn "#{'- ERROR:'.red} #{ERROR_LIST[error]} line #{item}"
