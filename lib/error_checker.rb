@@ -2,8 +2,6 @@ require 'strscan'
 
 # class ErrorChecker look for linters errors
 class ErrorChecker
-  attr_reader :string_list
-
   def initialize(string_list)
     @string_list = string_list
   end
@@ -30,18 +28,6 @@ class ErrorChecker
     end
     error_lines
   end
-
-  private
-
-  def check_brackets_lines
-    bracket_lines = {}
-    @string_list.each_with_index do |str, i|
-      bracket_lines[i + 1] = str[-1] if str.include?('}') || str.include?('{')
-    end
-    bracket_lines
-  end
-
-  public
 
   def check_closing_brackets
     return 'the file is empty' if @string_list == 'the file is empty'
@@ -79,5 +65,15 @@ class ErrorChecker
       check_closing_brackets.length +
       check_bad_ending_atribute.length +
       check_duplicate_includes.length
+  end
+
+  private
+
+  def check_brackets_lines
+    bracket_lines = {}
+    @string_list.each_with_index do |str, i|
+      bracket_lines[i + 1] = str[-1] if str.include?('}') || str.include?('{')
+    end
+    bracket_lines
   end
 end

@@ -5,5 +5,3 @@ gem 'rubocop', '~>0.81.0'
 gem 'strscan', '~>1.0.3'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
-
-# gem "rails"
