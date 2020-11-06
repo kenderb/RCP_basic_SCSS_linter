@@ -73,6 +73,8 @@ class ErrorChecker
   end
 
   def error_counter
+    return 0 if @string_list == 'the file is empty'
+
     check_snake_on_selector_name.length +
       check_closing_brackets.length +
       check_bad_ending_atribute.length +
