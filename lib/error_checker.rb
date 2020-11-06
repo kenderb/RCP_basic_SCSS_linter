@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'strscan'
 
 # class ErrorChecker look for linters errors

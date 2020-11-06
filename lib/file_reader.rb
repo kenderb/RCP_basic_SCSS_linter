@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'colorize'
 
 # ReadFile class take a path as a parameter and reads the content

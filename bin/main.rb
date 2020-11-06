@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
-
 require 'colorize'
 require_relative '../lib/file_reader'
 require_relative '../lib/error_checker'
