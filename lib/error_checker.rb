@@ -73,4 +73,11 @@ class ErrorChecker
     end
     lines
   end
+
+  def error_counter
+    check_snake_on_selector_name.length +
+      check_closing_brackets.length +
+      check_bad_ending_atribute.length +
+      check_duplicate_includes.length
+  end
 end
