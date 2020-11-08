@@ -2,8 +2,7 @@
 
 # Basic scss file linter
 
-> Create a linter for best practices on SCSS files.
-This project was made to push me in a real-life situation creating a program with requirements and deadlines to output a functional product at the end.
+> Create a linter for best practices on SCSS files. I did this project to push me in a real-life situation creating a program with requirements and deadlines to output a functional product at the end.
 
 ## Built With
 
@@ -27,15 +26,15 @@ To get a local copy up and running follow these simple example steps.
 
 
 ## Instructions
-> To check for errors in your scss file run the code ruby bin/main.rb + absolute path to scss file you want to check.
+> To check for errors in your SCSS file run the code ruby bin/main.rb + absolute path to SCSS file you want to check.
 - You can check the Code running `bin/main.rb ./scss_test_file/sass_file.scss` in the project folder  <br/>
-- If you have ERRORS that will be displayed on the console like this. </br></br>
+- If you have bad practices on the file will be displayed on the console like this. </br></br>
 <img src='https://lh3.googleusercontent.com/pw/ACtC-3dIA1T3bwLIC6Dr8do9ckTbrwIdY-s0GohoVWM6r2KMsrumPWLbLMD3E-dz3_fLuKW-j_KI1n9GxV0A0KSj6cQW5yzS4YGC8CjY_q2WId4ixsX3yUNAOlNfwBNIvfboY9e91cGeT14d-3fYoe6qDcHU=w618-h218-no?authuser=0'> </br>
-- If you have not ERRORS that will be displayed on the console like this. </br></br>
+- If you don't have bad practices on your file will be displayed on the console like this. </br></br>
 <img src='https://lh3.googleusercontent.com/pw/ACtC-3ez63rvVTV1Pvp06lejNU29wwfo67YdPkPnIATY1LYbqV0HKVY3h_Sa3c12xeC2W1Gj8OKynrgqj3Ps0hhH-uD-D3ZoAzFT831vqs-A_PPnO-z0mhWvk43CS09Xbpq5kQ_8nwiIMmxsgp4fyxhCXYNE=w186-h85-no?authuser=0'></br>
 
 ## How it works
-The linter scan the SCSS file and show you the errors:
+The linter scans the SCSS file and shows you the errors:
 - Use of @mixin that generates duplicates code after compiling it use %placeholders to reduce it. </br>
 	<b> Good practice</b>
 	```
